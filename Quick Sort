@@ -14,15 +14,16 @@ import sys
 #
 
 def quickSort(arr):
-    center = arr[0]
-    arr = sorted(arr)
-    sorted_list = [center]
-    for element in arr:
-        if element < center:
-            sorted_list.insert(0, element)
-        elif element > center:
-            sorted_list.insert(arr.index(element), element)
-    return sorted_list
+    p=arr[0]
+    left=[]
+    right=[]
+    
+    for i in range(1,len(arr)):
+        if arr[i]<p:
+            left.append(arr[i])
+        else:
+            right.append(arr[i]) 
+    return left+[p]+right
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
